@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Workspace from './Workspace';
+import AppContainer from './AppContainer';
 
 it('renders without crashing', () => {
-  shallow(<Workspace />);
+  shallow(<AppContainer />);
 });

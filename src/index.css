@@ -3426,7 +3426,7 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
-.Header-logo {
+.header .logo {
   height: 60px; }
 
 body {
