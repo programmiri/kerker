@@ -2,7 +2,7 @@
   "name": "savenotes",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "4.0.0-beta.3",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
