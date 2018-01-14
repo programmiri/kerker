@@ -1,4 +1,7 @@
-@import './scss/App';
+@import "./scss/bootstrap/config";
+
+//import components styles here
+@import './scss/components/App';
 
 body {
   margin: 0;
