@@ -7,6 +7,10 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>Kerker</title>
+    <script>
+      window.TREZOR_POPUP_ORIGIN = 'https://connect.trezor.io';
+    </script>
+  </head>
   </head>
   <body>
     <noscript>
@@ -16,5 +20,6 @@
     <h1> This is a test</h1>
     <p> Does bootstrap work?</p>
     <a href="" class="btn btn-primary">here now</a>
+    <script src="https://connect.trezor.io/4/connect.js"></script>    
   </body>
 </html>
