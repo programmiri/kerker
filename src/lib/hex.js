@@ -55,7 +55,7 @@ const unpad = (str) => {
   const expectedPadding = addedHex.repeat(addedNum);
 
   if (!str.endsWith(expectedPadding)) {
-    throw 'Padding is not as expected';
+    throw new Error('Padding is not as expected');
   }
 
   return str.substr(0, str.length - addedHexChars);
