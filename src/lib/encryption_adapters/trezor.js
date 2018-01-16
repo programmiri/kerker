@@ -1,5 +1,4 @@
 import { normalizeAfterDecryption, prepareForEncryption } from '../hex';
-/*global TrezorConnect*/
 
 const maxLength = 500;
 
@@ -44,7 +43,7 @@ const decrypt = (content, options = {}) => {
 };
 
 const buildTrezorCall = ({ content, encrypt }, callback) => {
-  return TrezorConnect.cipherKeyValue(
+  return window.TrezorConnect.cipherKeyValue(
     path, key, content, encrypt, confirmEncryption, confirmDecryption, callback
   );
 };
