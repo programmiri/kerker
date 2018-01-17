@@ -13,7 +13,7 @@ describe('#encrypt', () => {
     const message = 'hello world';
 
     expect.assertions(1);
-    adapter.encrypt(message).then(result => {
+    adapter.encrypt(message).then((result) => {
       expect(result.content).toEqual(':::ENCRYPTED::: hello world');
     });
     jest.runAllTimers();
@@ -23,7 +23,7 @@ describe('#encrypt', () => {
     const message = 'hello world';
 
     expect.assertions(1);
-    adapter.encrypt(message, { fakeError: 'MY ERROR MESSAGE' }).catch(result => {
+    adapter.encrypt(message, { fakeError: 'MY ERROR MESSAGE' }).catch((result) => {
       expect(result.error).toEqual('MY ERROR MESSAGE');
     });
     jest.runAllTimers();
@@ -35,7 +35,7 @@ describe('#decrypt', () => {
     const message = ':::ENCRYPTED::: hello world';
 
     expect.assertions(1);
-    adapter.decrypt(message).then(result => {
+    adapter.decrypt(message).then((result) => {
       expect(result.content).toEqual('hello world');
     });
     jest.runAllTimers();
@@ -45,7 +45,7 @@ describe('#decrypt', () => {
     const message = 'hello world';
 
     expect.assertions(1);
-    adapter.decrypt(message, { fakeError: 'MY ERROR MESSAGE' }).catch(result => {
+    adapter.decrypt(message, { fakeError: 'MY ERROR MESSAGE' }).catch((result) => {
       expect(result.error).toEqual('MY ERROR MESSAGE');
     });
     jest.runAllTimers();

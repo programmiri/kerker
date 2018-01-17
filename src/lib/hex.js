@@ -9,19 +9,19 @@ const paddingLength = 32;
 
 const splitDigitsRegex = new RegExp(`.{1,${hexDigits}}`, 'g');
 
-const numToHex = num => {
+const numToHex = (num) => {
   return num.toString(16).padStart(hexDigits, '0');
 };
 
-const charToHex = char => {
+const charToHex = (char) => {
   return numToHex(char.charCodeAt(0));
 };
 
-const hexToNum = hexStr => {
+const hexToNum = (hexStr) => {
   return parseInt(hexStr, 16);
 };
 
-const hexToChar = hexStr => {
+const hexToChar = (hexStr) => {
   return String.fromCharCode(hexToNum(hexStr));
 };
 

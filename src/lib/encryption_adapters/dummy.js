@@ -1,6 +1,6 @@
 const marker = ':::ENCRYPTED::: ';
 
-const isValid = message => true;
+const isValid = (message) => true;
 
 const encrypt = (message, options = {}) => {
   const encrypted = marker.concat(message);
