@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
-import logo from './../images/logo.png';
-import Alert from './Alert';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App container-fluid">
-        <header className="App-header d-block">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="h4">Welcome to Kerker</p>
-        </header>
-        <Alert text="This is the text" context="primary"/>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+import Footer from './Footer';
+import Header from './Header';
+import List from './List';
+import ListOptions from './ListOptions';
+import Note from './Note';
+import NoteDetails from './NoteDetails';
+
+
+function App() {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <Header />
+        </div>
       </div>
-    );
-  }
+      <div className="row">
+        <div className="col-4">
+          <ListOptions />
+          <List />
+        </div>
+        <div className="col-8">
+          <NoteDetails />
+          <Note />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <Footer />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
