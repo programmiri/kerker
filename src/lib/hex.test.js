@@ -1,4 +1,4 @@
-import * as hex from './hex.js';
+import * as hex from './hex';
 
 describe('#fromString', () => {
   it('converts a string to a hex value', () => {
