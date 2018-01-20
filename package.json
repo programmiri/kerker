@@ -25,6 +25,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "dropbox": "^2.5.13"
+    "dropbox": "^2.5.13",
+    "store": "^2.0.12"
   }
 }
