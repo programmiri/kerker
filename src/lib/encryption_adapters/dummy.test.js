@@ -2,12 +2,6 @@ import * as adapter from './dummy.js';
 
 jest.useFakeTimers();
 
-describe('#isValid', () => {
-  it('returns true', () => {
-    expect(adapter.isValid('some message')).toEqual(true);
-  });
-});
-
 describe('#encrypt', () => {
   it('returns a promise', () => {
     const message = 'hello world';
