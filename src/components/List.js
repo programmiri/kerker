@@ -3,8 +3,13 @@ import ListItem from './ListItem';
 
 function List(props) {
   return (
-    <ul>
-      <ListItem />
+    <ul className="list-group">
+      <ListItem
+        name= "this is a list item"
+      />
+      <ListItem
+        name= "this is another list item"
+      />
     </ul>
   )
 }

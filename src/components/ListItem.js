@@ -2,7 +2,9 @@ import React from 'react';
 
 function ListItem(props) {
   return (
-    <li>I am a list item</li>
+    <li className="list-group-item">
+      {props.name}
+    </li>
   )
 }
 
