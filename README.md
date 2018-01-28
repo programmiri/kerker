@@ -89,3 +89,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
 
+## Environment variables
+
+In order to use the app in development mode, you will need to add a `.env.local` file to the root directory of the project. The content should be the same like `.env.test` but will need real values, e.g. the Dropbox client ID of the app.

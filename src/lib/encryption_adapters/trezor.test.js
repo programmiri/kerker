@@ -27,23 +27,6 @@ const expectedKey = 'Unlock KERKER?';
 const expectedConfirmEncryption = false;
 const expectedConfirmDecryption = false;
 
-describe('#isValid', () => {
-  it('accepts an empty string', () => {
-    const input = '';
-    expect(adapter.isValid(input)).toBe(true);
-  });
-
-  it('accepts a string that is not too long', () => {
-    const input = 'x'.repeat(500);
-    expect(adapter.isValid(input)).toBe(true);
-  });
-
-  it('rejects a string that is too long', () => {
-    const input = 'x'.repeat(501);
-    expect(adapter.isValid(input)).toBe(false);
-  });
-});
-
 describe('#encrypt', () => {
   describe('successful encryption', () => {
     beforeEach(() => global.TrezorConnect.cipherKeyValue = mockEncryptionSuccess);

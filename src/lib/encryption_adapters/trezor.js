@@ -1,7 +1,5 @@
 import { normalizeAfterDecryption, prepareForEncryption } from '../hex';
 
-const maxLength = 500;
-
 // IMPORTANT:
 // Changing path OR key will change en-/decryption results!!!
 const path = "m/10016'/0";
@@ -9,8 +7,6 @@ const key = 'Unlock KERKER?';
 
 const confirmEncryption = false;
 const confirmDecryption = false;
-
-const isValid = (content = '') => content.length <= maxLength;
 
 const encrypt = (content, options = {}) => {
   const value = prepareForEncryption(content);
@@ -48,4 +44,4 @@ const buildTrezorCall = ({ content, encrypt }, callback) => {
   );
 };
 
-export { isValid, encrypt, decrypt };
+export { encrypt, decrypt };
