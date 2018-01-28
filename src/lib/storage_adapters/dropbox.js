@@ -8,6 +8,8 @@ const localStorageKey = 'dbx_access_token';
 
 const fileName = `notes_v${storageVersion}.json`;
 
+const unauthorizedCallbacks = [];
+
 let dbxClientGuest;
 let dbxClientUser;
 
@@ -51,6 +53,7 @@ const fetch = () => {
         reader.readAsText(response.fileBlob);
       })
       .catch((error) => {
+        checkForUnauthorized(error);
         reject(error);
       });
   };
@@ -77,7 +80,18 @@ const persist = (notes) => {
   const serialized = serializeAll(notes);
   const content = JSON.stringify({ notes: serialized });
 
-  return userClient().filesUpload({ path, contents: content });
+  const saveFile = (resolve, reject) => {
+    userClient().filesUpload({ path, contents: content })
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        checkForUnauthorized(error);
+        reject(error);
+      });
+  };
+
+  return new Promise(saveFile);
 };
 
 const loadAccessToken = () => localStorage.get(localStorageKey);
@@ -128,7 +142,7 @@ const checkIfFileExists = (path) => {
         }
       })
       .catch(error => {
-        // TODO handle console.dir(error.response.unauthorized)
+        checkForUnauthorized(error);
         reject(error);
       });
   };
@@ -142,11 +156,27 @@ const parseNotes = (result) => {
   return notes;
 };
 
+const registerUnauthorizedCallback = (callback) => {
+  unauthorizedCallbacks.push(callback);
+};
+
+const checkForUnauthorized = (error) => {
+  const isUnauthorized = error && error.response && error.response.unauthorized;
+  if (!isUnauthorized) return;
+
+  logout();
+
+  unauthorizedCallbacks.forEach((callback) => {
+    callback(error);
+  });
+};
+
 export {
   isLoggedIn,
   redirectToLogin,
   locationContainsCredentials,
   saveCredentialsFromLocation,
+  registerUnauthorizedCallback,
   logout,
   fetch,
   persist

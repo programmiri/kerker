@@ -108,10 +108,21 @@ describe('fetch', () => {
 
   xit('returns the notes on Dropbox when the file exists', () => {
   });
+
+  xit('handles an unauthorized error', () => {
+  });
 });
 
 describe('persist', () => {
   xit('saves the note to Dropbox', () => {
+  });
+
+  xit('handles an unauthorized error', () => {
+  });
+});
+
+describe('registerUnauthorizedCallback ', () => {
+  xit('adds a callback that gets called when Dropbox API throws unauthorized error', () => {
   });
 });
 
