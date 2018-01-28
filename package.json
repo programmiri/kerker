@@ -1,9 +1,10 @@
 {
-  "name": "savenotes",
+  "name": "kerker",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "bootstrap": "4.0.0-beta.3",
+    "dropbox": "^2.5.13",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "node-sass-chokidar": "^0.0.3",
@@ -11,8 +12,9 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17",
-    "react-test-renderer": "^16.2.0"
+    "react-scripts": "1.1.0",
+    "react-test-renderer": "^16.2.0",
+    "store": "^2.0.12"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -23,9 +25,5 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "dependencies": {
-    "dropbox": "^2.5.13",
-    "store": "^2.0.12"
   }
 }
