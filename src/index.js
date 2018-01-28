@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import AppContainer from './components/AppContainer';
 import * as dropbox from './lib/storage_adapters/dropbox';
 
 import * as trezor from './lib/encryption_adapters/trezor';
@@ -13,10 +13,10 @@ const encryptionAdapters = {
   dummy: dummy,
   trezor: trezor
 };
-
 const encryption = encryptionAdapters.trezor;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppContainer />, document.getElementById('root'));
+
 registerServiceWorker();
 
 // TODO: Just for manual tryouts, remove when in UI
