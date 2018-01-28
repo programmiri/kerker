@@ -1,9 +1,12 @@
 import * as notes from './notes';
 
+const uuidV4Regex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+
 describe('build', () => {
   it('sets all the default attributes', () => {
     const note = notes.build();
 
+    expect(note.id).toMatch(uuidV4Regex);
     expect(note.title).toEqual('');
     expect(note.body).toEqual('');
 
@@ -56,6 +59,13 @@ describe('validate', () => {
     expect(result).toBe(true);
   });
 
+  it('returns an error object if the id is empty', () => {
+    note.id = '';
+
+    const result = notes.validate(note);
+    expect(result).toEqual({ id: 'can not be empty' });
+  });
+
   it('returns an error object if the title is empty', () => {
     note.title = '';
 
@@ -94,9 +104,10 @@ describe('serialize', () => {
     const result = notes.serialize(note);
 
     expect(Object.keys(result)).toEqual([
-      'title', 'bodyEncrypted', 'createdAt', 'updatedAt'
+      'id', 'title', 'bodyEncrypted', 'createdAt', 'updatedAt'
     ]);
 
+    expect(result.id).toEqual(note.id);
     expect(result.title).toEqual(note.title);
     expect(result.bodyEncrypted).toEqual(note.bodyEncrypted);
     expect(result.createdAt).toEqual(note.createdAt.toISOString());
@@ -107,6 +118,7 @@ describe('serialize', () => {
 describe('deserialize', () => {
   it('deserializes to a proper note object', () => {
     const json = {
+      id: '109156be-c4fb-41ea-b1b4-efe1671c5836',
       title: 'my title',
       bodyEncrypted: 'SECRET',
       updatedAt: "2018-01-20T12:59:10.181Z",
@@ -115,6 +127,7 @@ describe('deserialize', () => {
 
     const result = notes.deserialize(json);
 
+    expect(result.id).toBe(json.id);
     expect(result.body).toBe(null);
     expect(result.bodyPersistedVersion).toBe(null);
     expect(result.title).toEqual(json.title);

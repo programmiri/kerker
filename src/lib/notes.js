@@ -1,3 +1,5 @@
+import uuid from 'uuid/v4';
+
 const maxBodyLength = 500; // this is a restriction of Trezor
 const maxTitleLength = 100;
 
@@ -5,6 +7,7 @@ const build = ({ title, body } = {}) => {
   const date = new Date();
 
   return {
+    id: uuid(),
     title: title || '',
     body: body || '',
     bodyPersistedVersion: null,
@@ -18,6 +21,10 @@ const hasChanged = (note) => note.body !== note.bodyPersistedVersion;
 
 const validate = (note) => {
   const errors = {};
+
+  if (!note.id) {
+    errors.id = 'can not be empty';
+  }
 
   if (note.title.length === 0) {
     errors.title = 'can not be empty';
@@ -44,6 +51,7 @@ const validate = (note) => {
 
 const serialize = (note) => {
   return {
+    id: note.id,
     title: note.title,
     bodyEncrypted: note.bodyEncrypted,
     createdAt: note.createdAt.toISOString(),
@@ -55,6 +63,7 @@ const serializeAll = (notes) => notes.map(note => serialize(note));
 
 const deserialize = (json) => {
   return {
+    id: json.id,
     title: json.title,
     body: null,
     bodyPersistedVersion: null,
