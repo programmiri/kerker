@@ -1,7 +1,5 @@
 const marker = ':::ENCRYPTED::: ';
 
-const isValid = (message) => true;
-
 const encrypt = (message, options = {}) => {
   const encrypted = marker.concat(message);
   const promise = new Promise((resolve, reject) => {
@@ -32,4 +30,4 @@ const decrypt = (message, options = {}) => {
   return promise;
 };
 
-export { isValid, encrypt, decrypt };
+export { encrypt, decrypt };
