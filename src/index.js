@@ -23,7 +23,9 @@ registerServiceWorker();
 window.encryption = encryption;
 window.dbx = dropbox;
 
-dropbox.registerUnauthorizedCallback(() => console.error('Credentials were removed, logging out'));
+dropbox.registerUnauthorizedCallback(() =>
+  console.error('Credentials were removed, logging out')
+);
 
 window.notes = [
   {

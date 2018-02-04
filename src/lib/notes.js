@@ -17,9 +17,9 @@ const build = ({ title, body } = {}) => {
   };
 };
 
-const hasChanged = (note) => note.body !== note.bodyPersistedVersion;
+const hasChanged = note => note.body !== note.bodyPersistedVersion;
 
-const validate = (note) => {
+const validate = note => {
   const errors = {};
 
   if (!note.id) {
@@ -42,14 +42,14 @@ const validate = (note) => {
     errors.body = 'too long';
   }
 
-  if (Object.entries(errors).length === 0) {;
+  if (Object.entries(errors).length === 0) {
     return true;
   } else {
     return errors;
   }
 };
 
-const serialize = (note) => {
+const serialize = note => {
   return {
     id: note.id,
     title: note.title,
@@ -59,9 +59,9 @@ const serialize = (note) => {
   };
 };
 
-const serializeAll = (notes) => notes.map(note => serialize(note));
+const serializeAll = notes => notes.map(note => serialize(note));
 
-const deserialize = (json) => {
+const deserialize = json => {
   return {
     id: json.id,
     title: json.title,
@@ -73,6 +73,14 @@ const deserialize = (json) => {
   };
 };
 
-const deserializeAll = (json) => json.map(item => deserialize(item));
+const deserializeAll = json => json.map(item => deserialize(item));
 
-export { build, hasChanged, validate, serialize, serializeAll, deserialize, deserializeAll };
+export {
+  build,
+  hasChanged,
+  validate,
+  serialize,
+  serializeAll,
+  deserialize,
+  deserializeAll
+};

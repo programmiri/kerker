@@ -6,7 +6,7 @@ function List(props) {
     <ul>
       <ListItem />
     </ul>
-  )
+  );
 }
 
 export default List;

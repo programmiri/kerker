@@ -8,7 +8,7 @@ function Header(props) {
       <p className="h4">Welcome to Kerker</p>
       <hr />
     </header>
-  )
+  );
 }
 
 export default Header;

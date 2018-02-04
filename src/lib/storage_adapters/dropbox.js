@@ -15,14 +15,17 @@ let dbxClientUser;
 
 const isLoggedIn = () => !!loadAccessToken();
 
-const redirectToLogin = (location) => {
-  const authUrl = guestClient().getAuthenticationUrl(process.env.REACT_APP_DROPBOX_AUTH_URL);
+const redirectToLogin = location => {
+  const authUrl = guestClient().getAuthenticationUrl(
+    process.env.REACT_APP_DROPBOX_AUTH_URL
+  );
   location.href = authUrl;
 };
 
-const locationContainsCredentials = (location) => !!extractAccessTokenFromLocation(location);
+const locationContainsCredentials = location =>
+  !!extractAccessTokenFromLocation(location);
 
-const saveCredentialsFromLocation = (location) => {
+const saveCredentialsFromLocation = location => {
   const accessToken = extractAccessTokenFromLocation(location);
 
   if (accessToken) {
@@ -43,7 +46,8 @@ const fetch = () => {
   const path = `/${fileName}`;
 
   const loadFile = function(resolve, reject) {
-    userClient().filesDownload({ path: path })
+    userClient()
+      .filesDownload({ path: path })
       .then(function(response) {
         const reader = new FileReader();
         reader.addEventListener('loadend', () => {
@@ -52,7 +56,7 @@ const fetch = () => {
         });
         reader.readAsText(response.fileBlob);
       })
-      .catch((error) => {
+      .catch(error => {
         checkForUnauthorized(error);
         reject(error);
       });
@@ -60,14 +64,14 @@ const fetch = () => {
 
   const checkAndLoad = (resolve, reject) => {
     checkIfFileExists(path)
-      .then((result) => {
+      .then(result => {
         if (result.exists) {
           resolve(new Promise(loadFile));
         } else {
           resolve({ notes: [] });
         }
       })
-      .catch((error) => {
+      .catch(error => {
         reject(error);
       });
   };
@@ -75,17 +79,18 @@ const fetch = () => {
   return new Promise(checkAndLoad);
 };
 
-const persist = (notes) => {
+const persist = notes => {
   const path = `/${fileName}`;
   const serialized = serializeAll(notes);
   const content = JSON.stringify({ notes: serialized });
 
   const saveFile = (resolve, reject) => {
-    userClient().filesUpload({ path, contents: content })
-      .then((result) => {
+    userClient()
+      .filesUpload({ path, contents: content })
+      .then(result => {
         resolve(result);
       })
-      .catch((error) => {
+      .catch(error => {
         checkForUnauthorized(error);
         reject(error);
       });
@@ -96,13 +101,13 @@ const persist = (notes) => {
 
 const loadAccessToken = () => localStorage.get(localStorageKey);
 
-const extractAccessTokenFromLocation = (location) => {
-  const hashContent = location.hash.slice(1,-1);
+const extractAccessTokenFromLocation = location => {
+  const hashContent = location.hash.slice(1, -1);
   const searchParams = new window.URLSearchParams(hashContent);
   return searchParams.get('access_token');
 };
 
-const removeHashFromLocation = (location) => {
+const removeHashFromLocation = location => {
   const title = document.title;
   const url = location.pathname + location.search;
   window.history.pushState('', title, url);
@@ -128,11 +133,17 @@ const guestClient = () => {
   return dbxClientGuest;
 };
 
-const checkIfFileExists = (path) => {
-  const searchOptions = { path: '', query: path, mode: 'filename', max_results: 1 };
+const checkIfFileExists = path => {
+  const searchOptions = {
+    path: '',
+    query: path,
+    mode: 'filename',
+    max_results: 1
+  };
 
   const searchFile = (resolve, reject) => {
-    userClient().filesSearch(searchOptions)
+    userClient()
+      .filesSearch(searchOptions)
       .then(result => {
         const match = result.matches[0];
         if (match && match.metadata.path_lower === path) {
@@ -150,23 +161,23 @@ const checkIfFileExists = (path) => {
   return new Promise(searchFile);
 };
 
-const parseNotes = (result) => {
+const parseNotes = result => {
   const parsed = JSON.parse(result);
   const notes = deserializeAll(parsed.notes);
   return notes;
 };
 
-const registerUnauthorizedCallback = (callback) => {
+const registerUnauthorizedCallback = callback => {
   unauthorizedCallbacks.push(callback);
 };
 
-const checkForUnauthorized = (error) => {
+const checkForUnauthorized = error => {
   const isUnauthorized = error && error.response && error.response.unauthorized;
   if (!isUnauthorized) return;
 
   logout();
 
-  unauthorizedCallbacks.forEach((callback) => {
+  unauthorizedCallbacks.forEach(callback => {
     callback(error);
   });
 };

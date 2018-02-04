@@ -12,7 +12,7 @@ const encrypt = (content, options = {}) => {
   const value = prepareForEncryption(content);
 
   const trezorCall = (resolve, reject) => {
-    buildTrezorCall({ content: value, encrypt: true }, (result) => {
+    buildTrezorCall({ content: value, encrypt: true }, result => {
       if (result.success) {
         resolve({ content: result.value });
       } else {
@@ -26,7 +26,7 @@ const encrypt = (content, options = {}) => {
 
 const decrypt = (content, options = {}) => {
   const trezorCall = (resolve, reject) => {
-    buildTrezorCall({ content, encrypt: false }, (result) => {
+    buildTrezorCall({ content, encrypt: false }, result => {
       if (result.success) {
         resolve({ content: normalizeAfterDecryption(result.value) });
       } else {
@@ -40,7 +40,13 @@ const decrypt = (content, options = {}) => {
 
 const buildTrezorCall = ({ content, encrypt }, callback) => {
   return window.TrezorConnect.cipherKeyValue(
-    path, key, content, encrypt, confirmEncryption, confirmDecryption, callback
+    path,
+    key,
+    content,
+    encrypt,
+    confirmEncryption,
+    confirmDecryption,
+    callback
   );
 };
 

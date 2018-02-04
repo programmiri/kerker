@@ -3,9 +3,7 @@ import App from './App';
 
 class AppContainer extends Component {
   render() {
-    return (
-      <App />
-    );
+    return <App />;
   }
 }
 

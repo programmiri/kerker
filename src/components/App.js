@@ -7,7 +7,6 @@ import ListOptions from './ListOptions';
 import Note from './Note';
 import NoteDetails from './NoteDetails';
 
-
 function App() {
   return (
     <div className="container">

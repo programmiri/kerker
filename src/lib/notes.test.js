@@ -95,7 +95,6 @@ describe('validate', () => {
   });
 });
 
-
 describe('serialize', () => {
   it('serializes only the allowed content', () => {
     const note = notes.build({ title: 'my title', body: 'my body' });
@@ -104,7 +103,11 @@ describe('serialize', () => {
     const result = notes.serialize(note);
 
     expect(Object.keys(result)).toEqual([
-      'id', 'title', 'bodyEncrypted', 'createdAt', 'updatedAt'
+      'id',
+      'title',
+      'bodyEncrypted',
+      'createdAt',
+      'updatedAt'
     ]);
 
     expect(result.id).toEqual(note.id);
@@ -121,8 +124,8 @@ describe('deserialize', () => {
       id: '109156be-c4fb-41ea-b1b4-efe1671c5836',
       title: 'my title',
       bodyEncrypted: 'SECRET',
-      updatedAt: "2018-01-20T12:59:10.181Z",
-      createdAt: "2018-01-20T12:59:10.181Z"
+      updatedAt: '2018-01-20T12:59:10.181Z',
+      createdAt: '2018-01-20T12:59:10.181Z'
     };
 
     const result = notes.deserialize(json);
