@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a list of notes snapshot test 1`] = `
+<ul
+  className="list-group"
+>
+  <ListItem
+    createdAt={2018-02-04T11:28:24.000Z}
+    key="109156be-c4fb-41ea-b1b4-efe1671c5836"
+    title="Hello"
+  />
+  <ListItem
+    createdAt={2018-02-04T11:28:24.000Z}
+    key="209156be-c4fb-41ea-b1b4-efe1671c5836"
+    title="Another note"
+  />
+</ul>
+`;
