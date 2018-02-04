@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import App from './App';
+import PropTypes from 'prop-types';
 
 class AppContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isLoggedIn: true,
       notes: [
         {
           id: '109156be-c4fb-41ea-b1b4-efe1671c5836',
@@ -31,7 +33,7 @@ class AppContainer extends Component {
 
   render() {
     return (
-      <App notes={this.state.notes} />
+      <App notes={this.state.notes} isLoggedIn={this.state.isLoggedIn} />
     );
   }
 }

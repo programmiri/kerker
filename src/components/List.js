@@ -2,14 +2,18 @@ import React from 'react';
 import ListItem from './ListItem';
 
 function List(props) {
+
+  const listItems = props.notes.map((item) =>
+    <ListItem
+      key={item.id}
+      title={item.title}
+      createdAt={item.createdAt}
+    />
+  )
+
   return (
     <ul className="list-group">
-      <ListItem
-        name= "this is a list item"
-      />
-      <ListItem
-        name= "this is another list item"
-      />
+      { listItems }
     </ul>
   )
 }
