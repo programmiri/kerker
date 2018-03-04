@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a Note is selcted renders shows an placeholder as long as there is no note selected snapshot test 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Header />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-4"
+    >
+      <ListOptions />
+      <List
+        notes={
+          Array [
+            Object {
+              "body": "This is my body",
+              "bodyEncrypted": "SECRET",
+              "bodyPersistedVersion": "This is my body",
+              "createdAt": 2018-02-04T11:28:24.000Z,
+              "id": "109156be-c4fb-41ea-b1b4-efe1671c5836",
+              "title": "Hello",
+              "updatedAt": 2018-02-04T11:28:24.000Z,
+            },
+            Object {
+              "body": "Another body",
+              "bodyEncrypted": "SECRET2",
+              "bodyPersistedVersion": "Another body",
+              "createdAt": 2018-02-04T11:28:24.000Z,
+              "id": "209156be-c4fb-41ea-b1b4-efe1671c5836",
+              "title": "Another note",
+              "updatedAt": 2018-02-04T11:28:24.000Z,
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      className="col-8"
+    >
+      No note yet.
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Footer />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a Note is selcted renders shows an placeholder as long as there is no note selected snapshot test 2`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Header />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-4"
+    >
+      <ListOptions />
+      <List
+        notes={
+          Array [
+            Object {
+              "body": "This is my body",
+              "bodyEncrypted": "SECRET",
+              "bodyPersistedVersion": "This is my body",
+              "createdAt": 2018-02-04T11:28:24.000Z,
+              "id": "109156be-c4fb-41ea-b1b4-efe1671c5836",
+              "title": "Hello",
+              "updatedAt": 2018-02-04T11:28:24.000Z,
+            },
+            Object {
+              "body": "Another body",
+              "bodyEncrypted": "SECRET2",
+              "bodyPersistedVersion": "Another body",
+              "createdAt": 2018-02-04T11:28:24.000Z,
+              "id": "209156be-c4fb-41ea-b1b4-efe1671c5836",
+              "title": "Another note",
+              "updatedAt": 2018-02-04T11:28:24.000Z,
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      className="col-8"
+    >
+      <LockButton
+        currentNote={
+          Object {
+            "body": "This is my body",
+            "bodyEncrypted": "SECRET",
+            "bodyPersistedVersion": "This is my body",
+            "createdAt": 2018-02-04T11:28:24.000Z,
+            "id": "109156be-c4fb-41ea-b1b4-efe1671c5836",
+            "title": "Hello",
+            "updatedAt": 2018-02-04T11:28:24.000Z,
+          }
+        }
+      />
+      <NoteDetails />
+      <Note />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Footer />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<App /> when not logged in snapshot test 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Header />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      You're not logged in
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <Footer />
+    </div>
+  </div>
+</div>
+`;
