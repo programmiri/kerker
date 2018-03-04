@@ -1,5 +1,6 @@
 .Header {
-  .Header_logo {
+  grid-area: header;
+  .Header-logo {
     height: 60px;
   }
 }

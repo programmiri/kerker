@@ -1,0 +1,23 @@
+.App {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 1fr 150px;
+
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer  footer  footer";
+
+  .App-login-notice {
+    grid-column: sidebar / content;
+  }
+
+  .App-note-options {
+    grid-area: sidebar;
+  }
+
+  .App-note-section {
+    grid-area: content / content;
+  }
+}

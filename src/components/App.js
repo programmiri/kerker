@@ -10,16 +10,12 @@ import LockButton from "./LockButton";
 
 class App extends Component {
   renderLogin() {
-    return (
-      <div className="row">
-        <div className="col">You're not logged in</div>
-      </div>
-    );
+    return <div className="App-login-notice">You're not logged in</div>;
   }
 
   renderNote() {
     return (
-      <div className="col-8">
+      <div className="App-note-section">
         <LockButton currentNote={this.props.currentNote} />
         <NoteDetails />
         <Note />
@@ -28,7 +24,7 @@ class App extends Component {
   }
 
   renderNotePlaceholder() {
-    return <div className="col-8">No note yet.</div>;
+    return <div className="App-note-section">No note yet.</div>;
   }
 
   renderNoteSection() {
@@ -38,8 +34,8 @@ class App extends Component {
       : this.renderNotePlaceholder();
 
     return (
-      <div className="row">
-        <div className="col-4">
+      <React.Fragment>
+        <div className="App-note-options">
           <ListOptions />
           <List
             notes={this.props.notes}
@@ -47,7 +43,7 @@ class App extends Component {
           />
         </div>
         {currentNote}
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -59,18 +55,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <Header />
-          </div>
-        </div>
+      <div className="App">
+        <Header />
         {this.renderMainContent()}
-        <div className="row">
-          <div className="col">
-            <Footer />
-          </div>
-        </div>
+        <Footer />
       </div>
     );
   }

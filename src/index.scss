@@ -1,8 +1,10 @@
-@import './scss/bootstrap/config';
+@import "./scss/bootstrap/config";
 
 //import components styles here
-@import './scss/components/Header';
-@import './scss/components/LockButton';
+@import "./scss/components/App";
+@import "./scss/components/Header";
+@import "./scss/components/Footer";
+@import "./scss/components/LockButton";
 
 body {
   margin: 0;

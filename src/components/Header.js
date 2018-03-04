@@ -1,14 +1,14 @@
-import React from 'react';
-import logo from './../images/logo.png';
+import React from "react";
+import logo from "./../images/logo.png";
 
 function Header(props) {
   return (
-    <header className="text-right">
-      <img src={logo} alt="logo" />
+    <header className="Header text-right">
+      <img src={logo} className="Header-logo" alt="logo" />
       <p className="h4">Welcome to Kerker</p>
       <hr />
     </header>
-  )
+  );
 }
 
 export default Header;
