@@ -8,10 +8,16 @@ function ListItem(props) {
     props.setCurrentNote(props.note);
   };
   return (
-    <li className="list-group-item" key={`${props.id}`} onClick={handleClick}>
-      {props.title}, from
-      {dateToString(props.createdAt)}
-    </li>
+    <div
+      className="ListItem list-group-item"
+      key={`${props.id}`}
+      onClick={handleClick}
+    >
+      <small className="ListItem-date text-right">
+        created: {dateToString(props.createdAt)}
+      </small>
+      <p className="ListItem-title mb-0">{props.title}</p>
+    </div>
   );
 }
 

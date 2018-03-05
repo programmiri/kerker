@@ -14,7 +14,7 @@ function List(props) {
     />
   ));
 
-  return <ul className="list-group">{listItems}</ul>;
+  return <div className="List list-group ">{listItems}</div>;
 }
 
 export default List;

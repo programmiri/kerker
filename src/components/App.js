@@ -35,7 +35,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <div className="App-note-options">
+        <div className="App-note-options pr-5">
           <ListOptions />
           <List
             notes={this.props.notes}

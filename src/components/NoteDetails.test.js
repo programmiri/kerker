@@ -1,7 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import NoteDetails from './NoteDetails';
+import React from "react";
+import { shallow } from "enzyme";
+import NoteDetails from "./NoteDetails";
 
-it('renders without crashing', () => {
+it("renders without crashing", () => {
   shallow(<NoteDetails />);
 });

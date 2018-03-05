@@ -5,8 +5,7 @@ function Header(props) {
   return (
     <header className="Header text-right">
       <img src={logo} className="Header-logo" alt="logo" />
-      <p className="h4">Welcome to Kerker</p>
-      <hr />
+      <p className="lead">Welcome to Kerker</p>
     </header>
   );
 }

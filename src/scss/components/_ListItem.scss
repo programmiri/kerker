@@ -1,0 +1,13 @@
+.ListItem {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "date" "title";
+
+  .ListItem-date {
+    grid-area: date;
+  }
+
+  .ListItem-title {
+    grid-area: title;
+  }
+}

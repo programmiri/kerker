@@ -1,13 +1,17 @@
-@import "./scss/bootstrap/config";
+//import basic styles here
+// - bootstrap first
+@import "./scss/basic/bootstrap/config";
+@import "./scss/basic/bootstrap_ext/list-group";
+@import "./scss/basic/typo";
+
+// - more basic styles
+
+//import helper styles here
 
 //import components styles here
 @import "./scss/components/App";
 @import "./scss/components/Header";
 @import "./scss/components/Footer";
 @import "./scss/components/LockButton";
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import "./scss/components/ListOptions";
+@import "./scss/components/ListItem";

@@ -2,22 +2,12 @@
 
 exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a Note is selcted renders shows an placeholder as long as there is no note selected snapshot test 1`] = `
 <div
-  className="container"
+  className="App"
 >
-  <div
-    className="row"
-  >
+  <Header />
+  <React.Fragment>
     <div
-      className="col"
-    >
-      <Header />
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-4"
+      className="App-note-options pr-5"
     >
       <ListOptions />
       <List
@@ -46,41 +36,23 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
       />
     </div>
     <div
-      className="col-8"
+      className="App-note-section"
     >
       No note yet.
     </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col"
-    >
-      <Footer />
-    </div>
-  </div>
+  </React.Fragment>
+  <Footer />
 </div>
 `;
 
 exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a Note is selcted renders shows an placeholder as long as there is no note selected snapshot test 2`] = `
 <div
-  className="container"
+  className="App"
 >
-  <div
-    className="row"
-  >
+  <Header />
+  <React.Fragment>
     <div
-      className="col"
-    >
-      <Header />
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-4"
+      className="App-note-options pr-5"
     >
       <ListOptions />
       <List
@@ -109,7 +81,7 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
       />
     </div>
     <div
-      className="col-8"
+      className="App-note-section"
     >
       <LockButton
         currentNote={
@@ -127,49 +99,21 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
       <NoteDetails />
       <Note />
     </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col"
-    >
-      <Footer />
-    </div>
-  </div>
+  </React.Fragment>
+  <Footer />
 </div>
 `;
 
 exports[`<App /> when not logged in snapshot test 1`] = `
 <div
-  className="container"
+  className="App"
 >
+  <Header />
   <div
-    className="row"
+    className="App-login-notice"
   >
-    <div
-      className="col"
-    >
-      <Header />
-    </div>
+    You're not logged in
   </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col"
-    >
-      You're not logged in
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col"
-    >
-      <Footer />
-    </div>
-  </div>
+  <Footer />
 </div>
 `;
