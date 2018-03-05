@@ -1,9 +1,10 @@
 .App {
   display: grid;
-  height: 100vh;
   width: 100%;
+  min-height: 100vh;
   grid-template-columns: 1fr 5fr 4fr 4fr 1fr;
-  grid-template-rows: 1fr 8fr 0.5fr;
+  grid-template-rows: 1fr 5fr 0.5fr;
+  // grid-auto-rows: min-content;
 
   grid-template-areas:
     ". header header header . "

@@ -36,9 +36,9 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
       />
     </div>
     <div
-      className="App-note-section"
+      className="App-note-section font-hint bg-light mb-3 d-flex justify-content-center align-items-center"
     >
-      No note yet.
+      Currently no note selected.
     </div>
   </React.Fragment>
   <Footer />
@@ -81,7 +81,7 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
       />
     </div>
     <div
-      className="App-note-section"
+      className="App-note-section border p-5 mb-3"
     >
       <LockButton
         currentNote={

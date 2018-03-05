@@ -72,7 +72,7 @@ describe("<App /> when logged in", () => {
       it("renders shows an placeholder as long as there is no note selected", () => {
         expect(wrapper.find(NoteDetails).exists()).toBe(false);
         expect(wrapper.find(Note).exists()).toBe(false);
-        expect(wrapper.contains("No note yet.")).toBe(true);
+        expect(wrapper.contains("Currently no note selected.")).toBe(true);
       });
 
       it("snapshot test", () => {

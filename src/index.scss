@@ -2,11 +2,13 @@
 // - bootstrap first
 @import "./scss/basic/bootstrap/config";
 @import "./scss/basic/bootstrap_ext/list-group";
-@import "./scss/basic/typo";
 
 // - more basic styles
+@import "./scss/basic/typo";
 
-//import helper styles here
+//import utilitie styles here
+@import "./scss/utilities/flex";
+@import "./scss/utilities/spacing";
 
 //import components styles here
 @import "./scss/components/App";

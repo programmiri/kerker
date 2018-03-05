@@ -15,7 +15,7 @@ class App extends Component {
 
   renderNote() {
     return (
-      <div className="App-note-section">
+      <div className="App-note-section border p-5 mb-3">
         <LockButton currentNote={this.props.currentNote} />
         <NoteDetails />
         <Note />
@@ -24,7 +24,11 @@ class App extends Component {
   }
 
   renderNotePlaceholder() {
-    return <div className="App-note-section">No note yet.</div>;
+    return (
+      <div className="App-note-section font-hint bg-light mb-3 d-flex justify-content-center align-items-center">
+        Currently no note selected.
+      </div>
+    );
   }
 
   renderNoteSection() {

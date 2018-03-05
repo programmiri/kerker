@@ -2,7 +2,7 @@ import React from "react";
 
 function Note(props) {
   return (
-    <div className="pl-4 font-monospace font-lg">
+    <div className="font-monospace font-lg">
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam

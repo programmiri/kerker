@@ -7,3 +7,10 @@ $font-family-mono: "Cutive Mono", monospace;
 .font-lg {
   font-size: $font-size-lg;
 }
+
+.font-hint {
+  font-size: $font-size-lg * 1.5;
+  font-style: italic;
+  font-weight: 300;
+  color: $secondary;
+}

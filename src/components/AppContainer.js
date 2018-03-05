@@ -11,7 +11,7 @@ class AppContainer extends Component {
       notes: [
         {
           id: "109156be-c4fb-41ea-b1b4-efe1671c5836",
-          title: "Hello",
+          title: "This is a very important note",
           body: null,
           bodyPersistedVersion: "This is my body",
           bodyEncrypted: "SECRET",
@@ -20,7 +20,7 @@ class AppContainer extends Component {
         },
         {
           id: "209156be-c4fb-41ea-b1b4-efe1671c5836",
-          title: "Another note",
+          title: "Another really great note",
           body: "Another body",
           bodyPersistedVersion: "Another body",
           bodyEncrypted: "SECRET2",
