@@ -2,7 +2,7 @@
 
 exports[`renders a list of notes snapshot test 1`] = `
 <div
-  className="List list-group "
+  className="List list-group"
 >
   <ListItem
     createdAt={2018-02-04T11:28:24.000Z}

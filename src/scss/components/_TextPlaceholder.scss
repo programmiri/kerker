@@ -1,0 +1,17 @@
+.TextPlaceholder {
+
+  .TextPlaceholder-line {
+    height: $spacer-3;
+    background-color: $light;
+    margin-bottom: $spacer-2;
+    width: 80%
+  }
+  :nth-child(3n+0) {
+    width: 30%;
+  }
+
+  :nth-child(2n+0) {
+    width: 60%;
+  }
+
+}

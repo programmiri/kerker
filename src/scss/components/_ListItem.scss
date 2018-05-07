@@ -1,13 +1,25 @@
 .ListItem {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "date" "title";
+  border-left: 2px solid transparent;
 
-  .ListItem-date {
-    grid-area: date;
+  &:hover {
+    border-left: 2px solid $secondary;
+    cursor: pointer;
+  }
+
+  &.ListItem-active-item {
+    border-left: 2px solid $secondary;
+  }
+
+  .ListItem-open-hint {
+    height: $font-size-s;
   }
 
   .ListItem-title {
-    grid-area: title;
+
   }
+
+  .ListItem-date {
+
+  }
+
 }

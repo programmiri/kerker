@@ -1,10 +1,17 @@
 import React from "react";
 
 function LockButton(props) {
-  const buttonIcon = props.currentNote.body ? "fa-unlock" : "fa-lock";
+
+
+  const toggleEncodingState = event => {
+    event.preventDefault();
+    props.setCurrentNoteEncodingState(!props.currentNoteEncrypted);
+  };
+
+  const buttonIcon = props.currentNoteEncrypted ? "fa-unlock" : "fa-lock";
 
   return (
-    <div className="text-right py-4">
+    <div className="LockButton text-right pb-4" onClick={toggleEncodingState}>
       <i className={`fas fa-3x ${buttonIcon}`} />
     </div>
   );

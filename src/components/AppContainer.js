@@ -11,7 +11,7 @@ class AppContainer extends Component {
       notes: [
         {
           id: "109156be-c4fb-41ea-b1b4-efe1671c5836",
-          title: "This is a very important note",
+          title: "Very secret note about something",
           body: null,
           bodyPersistedVersion: "This is my body",
           bodyEncrypted: "SECRET",
@@ -20,21 +20,36 @@ class AppContainer extends Component {
         },
         {
           id: "209156be-c4fb-41ea-b1b4-efe1671c5836",
-          title: "Another really great note",
+          title: "Secret Codes",
           body: "Another body",
           bodyPersistedVersion: "Another body",
-          bodyEncrypted: "SECRET2",
+          bodyEncrypted: "SECRET",
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          id: "209156be-c4fb-41ea-b1b4-efe1671c5834",
+          title: "All the Bitcoin investment plans",
+          body: "Another body",
+          bodyPersistedVersion: "Another body",
+          bodyEncrypted: "SECRET",
           createdAt: new Date(),
           updatedAt: new Date()
         }
       ],
-      currentNote: null
+      currentNote: null,
+      currentNoteEncrypted: true
     };
     this.setCurrentNote = this.setCurrentNote.bind(this);
+    this.setCurrentNoteEncodingState = this.setCurrentNoteEncodingState.bind(this);
   }
 
   setCurrentNote(note) {
     this.setState({ currentNote: note });
+  }
+
+  setCurrentNoteEncodingState(value) {
+    this.setState({ currentNoteEncrypted: value });
   }
 
   render() {
@@ -43,7 +58,9 @@ class AppContainer extends Component {
         notes={this.state.notes}
         userIsLoggedIn={this.state.userIsLoggedIn}
         currentNote={this.state.currentNote}
+        currentNoteEncrypted={this.state.currentNoteEncrypted}
         setCurrentNote={this.setCurrentNote}
+        setCurrentNoteEncodingState={this.setCurrentNoteEncodingState}
       />
     );
   }

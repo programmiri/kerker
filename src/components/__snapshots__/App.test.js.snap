@@ -4,7 +4,9 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
 <div
   className="App"
 >
-  <Header />
+  <Header
+    positionInGrid="header"
+  />
   <React.Fragment>
     <div
       className="App-note-options pr-5"
@@ -49,7 +51,9 @@ exports[`<App /> when logged in renders <Note /> and <NoteDetails /> only when a
 <div
   className="App"
 >
-  <Header />
+  <Header
+    positionInGrid="header"
+  />
   <React.Fragment>
     <div
       className="App-note-options pr-5"
@@ -108,7 +112,9 @@ exports[`<App /> when not logged in snapshot test 1`] = `
 <div
   className="App"
 >
-  <Header />
+  <Header
+    positionInGrid="header"
+  />
   <div
     className="App-login-notice"
   >

@@ -1,15 +1,19 @@
 .App {
+
   display: grid;
   width: 100%;
   min-height: 100vh;
   grid-template-columns: 1fr 5fr 4fr 4fr 1fr;
   grid-template-rows: 1fr 5fr 0.5fr;
-  // grid-auto-rows: min-content;
 
   grid-template-areas:
     ". header header header . "
     ". sidebar content content ."
     "footer footer  footer  footer footer";
+
+  .App-header {
+    grid-area: header;
+  }
 
   .App-login-notice {
     grid-column: sidebar / content;
@@ -21,5 +25,7 @@
 
   .App-note-section {
     grid-area: content / content;
+    border: 1px solid $light;
+    padding: $spacer-3;
   }
 }

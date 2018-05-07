@@ -1,16 +1,34 @@
 $font-family-mono: "Cutive Mono", monospace;
+$font-family-base: "EB Garamond", serif;
+$font-family-heading: "Oswald", sans-serif;
+
+$font-family-logo: 'Amatic SC', cursive;
+
+$font-size-base: 1.1rem;
+$font-size-lg:($font-size-base * 1.25);
+$font-size-s: ($font-size-base * .875);
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-heading;
+  font-size: $font-family-heading;
+}
 
 .font-monospace {
   font-family: $font-family-mono;
+}
+
+.font-s {
+  font-size: $font-size-s;
 }
 
 .font-lg {
   font-size: $font-size-lg;
 }
 
-.font-hint {
-  font-size: $font-size-lg * 1.5;
-  font-style: italic;
-  font-weight: 300;
-  color: $secondary;
-}
+
+

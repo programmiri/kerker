@@ -1,6 +1,9 @@
 .Header {
-  grid-area: header;
   .Header-logo {
     height: 60px;
+  }
+
+  .Header-text {
+    font-family: $font-family-logo;
   }
 }

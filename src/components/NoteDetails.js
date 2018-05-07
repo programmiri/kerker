@@ -1,13 +1,15 @@
 import React from "react";
+import Alert from "./Alert";
+import { dateToString } from "../lib/format.js";
 
 function NoteDetails(props) {
   return (
-    <div className="text-right font-monospace">
-      <small>
-        <i class="far fa-calendar" /> created: 2018-01-01 | last edited:
-        2018-01-01
+    <React.Fragment>
+      <Alert context="warning" text="Dont't forget to decrypt your note!"/>
+      <small className="font-s  font-monospace">
+        <i className="far fa-calendar" /> created: {dateToString(props.createdAt)}
       </small>
-    </div>
+    </React.Fragment>
   );
 }
 

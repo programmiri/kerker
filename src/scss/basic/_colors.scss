@@ -1,0 +1,31 @@
+$white: ivory;
+$black: #1C140D;
+$grey: #878787;
+$light-grey: #F2E9E1;
+$green: #CBE86B;
+$yellow: #FAC943;
+$red: #FF4242;
+$blue: #93DDE0;
+
+$primary: $black;
+$secondary: $blue;
+$light: $light-grey;
+$dark:  $grey;
+$success: $green;
+$warning:$yellow;
+$danger: $red;
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger
+);
+
+body {
+  background-color: $white;
+}

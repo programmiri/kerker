@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import Footer from "./Footer";
 import Header from "./Header";
 import List from "./List";
@@ -7,6 +6,7 @@ import ListOptions from "./ListOptions";
 import Note from "./Note";
 import NoteDetails from "./NoteDetails";
 import LockButton from "./LockButton";
+import NotePlaceholder from "./NotePlaceholder";
 
 class App extends Component {
   renderLogin() {
@@ -14,18 +14,20 @@ class App extends Component {
   }
 
   renderNote() {
+    const noteDetails = this.props.currentNoteEncrypted ?  <NoteDetails createdAt={this.props.currentNote.createdAt} /> : null;
+    const note = this.props.currentNoteEncrypted ? <Note text={this.props.currentNote.bodyPersistedVersion}/> : <NotePlaceholder />;
     return (
-      <div className="App-note-section border p-5 mb-3">
-        <LockButton currentNote={this.props.currentNote} />
-        <NoteDetails />
-        <Note />
+      <div className="App-note-section ml-4">
+        <LockButton currentNoteEncrypted={this.props.currentNoteEncrypted} setCurrentNoteEncodingState={this.props.setCurrentNoteEncodingState}/>
+        {noteDetails}
+        {note}
       </div>
     );
   }
 
   renderNotePlaceholder() {
     return (
-      <div className="App-note-section font-hint bg-light mb-3 d-flex justify-content-center align-items-center">
+      <div className="App-note-section ml-4 d-flex align-items-center justify-content-center">
         Currently no note selected.
       </div>
     );
@@ -39,11 +41,13 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <div className="App-note-options pr-5">
+        <div className="App-note-options">
           <ListOptions />
           <List
             notes={this.props.notes}
+            currentNote={this.props.currentNote}
             setCurrentNote={this.props.setCurrentNote}
+            setCurrentNoteEncodingState={this.props.setCurrentNoteEncodingState}
           />
         </div>
         {currentNote}
@@ -60,7 +64,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <header className="App-header">
+          <Header positionInGrid=""/>
+        </header>
         {this.renderMainContent()}
         <Footer />
       </div>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Alert(props) {
   return (
-    <div className={`alert alert-${ props.context }`} role="alert">
+    <div className={`Alert Alert-${ props.context }`} role="alert">
     { props.text }
     </div>
   )

@@ -1,19 +1,23 @@
-//import basic styles here
-// - bootstrap first
-@import "./scss/basic/bootstrap/config";
-@import "./scss/basic/bootstrap_ext/list-group";
+//normalize.css
+@import "node_modules/normalize.css/normalize";
 
-// - more basic styles
+// more basic styles
+@import "./scss/basic/colors";
 @import "./scss/basic/typo";
 
 //import utilitie styles here
+@import "./scss/utilities/background";
 @import "./scss/utilities/flex";
+@import "./scss/utilities/listgroup";
 @import "./scss/utilities/spacing";
+@import "./scss/utilities/text";
 
 //import components styles here
+@import "./scss/components/Alert";
 @import "./scss/components/App";
 @import "./scss/components/Header";
 @import "./scss/components/Footer";
 @import "./scss/components/LockButton";
 @import "./scss/components/ListOptions";
 @import "./scss/components/ListItem";
+@import "./scss/components/TextPlaceholder";
